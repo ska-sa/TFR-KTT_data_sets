@@ -1,0 +1,19 @@
+Updated calibration delay sensors which also triggered a calibrate event for s2 and s3
+Dates: 17/06/2021 - 23/06/2021
+
+The calibration delay sensors were updated on the 17th of June 2021. 
+
+tmc2: produced tfr_sensors.log* files, using 2019 cal prior to 17 June and 2020 cal afterwards
+tmc1: produced vtss_out.log using 2020 cal whilst rerunning vtss in calibrate mode for 2 months into the past
+
+Notes:
+1) We stopped vtss on 17 June 2021. When vtss ran on 17 June it produced data for the 12th using 2019 cal for the last time on tmc2
+2) We ran vtss in "calibrate" mode for 2 months into the past on tmc1 and let it run over that weekend. At this time no vtss process ran on tmc2 as we agreed.
+3.1) On the 22nd of June I restarted vtss on tmc2, first by incorrecrly running calibrate mode for only 4 days into the past whereas it should've been 5. I noted this in an email sometime ago , here's the relevant snippet:
+
+"  Unfortunately I incorrectly calculated the amount of ketchup days and had to rerun it twice. Therefore, exactly the following duplicate data points in /var/log/tfr_sensors.log needs to be removed/ignored: 
+  From: Jun 22 15:05:22 tmc2 tfr_cm_core: 1624057200.000 ptic.keysight.msr1-msr2.15min.compound 1 473.717
+  Until: Jun 22 15:07:00 tmc2 tfr_cm_core: 1624316400.000 vtss.device-status 1 ok"
+
+3.2) Therefore when vtss reran in calibrate mode 5 days into the past, processing as if it was the 18th of June, it correctly produces data for the 13th of June using the updated 2020 cal delays as was deployed on the 17th. 
+
