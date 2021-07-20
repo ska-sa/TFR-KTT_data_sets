@@ -1,0 +1,14 @@
+Spurious signal Analysis:
+In CAM the timestamp is 2021-04-07 20:21:33 which is not on a 15min boundary and i don't see it when I plot it locally. Therefore, I'm not going to continue looking for the reason.
+
+Whilst doing this I did notice a bigger spur in the prefit data which I traced to the following data points in /var/lib/tfr_sync/raw.log.7
+Apr 06 18:42:00 tmc sync: 1617734520.000 cggtts.gps2-msr2-pull 2 0.000
+Apr 06 18:58:00 tmc sync: 1617735480.000 cggtts.gps2-msr2-pull 2 0.000
+Apr 06 19:14:00 tmc sync: 1617736440.000 cggtts.gps2-msr2-pull 2 0.000
+
+There isn't more historic raw data but from vtss_input.log* files I located 1 more for gps2-msr2:
+Mar 31 08:30:00 tmc sync: 1617179400.000 cggtts.gps2-msr2-pull.15min 2 0.000
+
+I talked to Grant about these and in future releases these will be marked as error status. The filters smoothed the outliers out in anycase.
+
+There was one more outlier for msr1-msr2 which was marked as unreachable and i was happy to see vtss not including the data point.

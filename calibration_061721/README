@@ -1,4 +1,5 @@
 Updated calibration delay sensors which also triggered a calibrate event for s2 and s3
+Updated uncertainty_b, which controls weights
 Dates: 17/06/2021 - 23/06/2021
 
 The calibration delay sensors were updated on the 17th of June 2021. 

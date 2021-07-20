@@ -1,0 +1,14 @@
+- This directory contains various data sets associated with the VTSS and ktt_real_time software for the TFR 
+- The data sets are either input or output products of the software 
+- ktt_real_time data sets are kept in the ./ktt_real_time directory, the rest of the data sets are related to VTSS
+- Scripts to plot and analyse VTSS data exists in ktt-utc/plotting_scripts if cloned from katfs or TFR-VTSS/plotting_scripts if cloned from github 
+- Scripts to plot and analyse ktt_real_time data exists in the ktt_real_time/plotting_scripts directory 
+
+***********************|****************************************************************************
+File/Dir               | Notes
+***********************|****************************************************************************
+calibration_061721     | See README in dir
+ktt_real_time          | See README in dir
+Spurious_0_GPS2_MSR2   | See README in dir
+tfr_sensors.log.280521 | Data for jatis paper
+test_vtss_bb1744       | Tested vtss continually running on tmc3, see ktt-utc commit id bb1744
